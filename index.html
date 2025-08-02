@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PyStudioBand – Professional Audio & Music Production Manager for Debian & Ubuntu</title>
+  <meta name="description" content="PyStudioBand is a GTK3-based GUI tool to install, remove, launch and manage audio and music production applications on Debian and Ubuntu.">
+  <meta name="keywords" content="PyStudioBand, Linux audio, music production, DAW manager, Debian, Ubuntu, GTK3, Python, PyGObject">
+  <meta name="author" content="Luca Bocaletto">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PyStudioBand – Professional Audio & Music Production Manager">
+  <meta property="og:description" content="Easily install, remove, launch and manage your audio & music apps on Debian/Ubuntu with a polished GTK3 GUI.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:url" content="https://yourdomain.com/PyStudioBand">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PyStudioBand – Audio & Music Production Manager">
+  <meta name="twitter:description" content="GTK3-based GUI for installing, removing, launching and organizing audio/music tools on Debian & Ubuntu.">
+  <meta name="twitter:image" content="assets/og-image.png">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="#" class="brand">PyStudioBand</a>
+      <ul class="nav-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#customization">Customization</a></li>
+        <li><a href="#contributing">Contributing</a></li>
+        <li><a href="#license">License</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <img src="assets/banner.png" alt="PyStudioBand GTK3 interface" class="hero-image">
+      <div class="hero-text">
+        <h1>PyStudioBand</h1>
+        <p>Manage audio & music production applications on Debian & Ubuntu with ease</p>
+        <a href="#installation" class="btn">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>
+        PyStudioBand is a modern GTK3-based desktop application that simplifies the management of
+        audio and music-production software on Debian and Ubuntu. From DAWs to synthesizers, PyStudioBand
+        offers an intuitive interface to install, remove, launch and organize your favorite tools.
+      </p>
+    </section>
+
+    <section id="features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>Curated catalog of popular audio and music-production applications</li>
+        <li>One-click install, remove or purge via apt-get</li>
+        <li>Real-time status of installed vs. available software</li>
+        <li>Launch multiple applications simultaneously</li>
+        <li>Organize by category: DAW, Editor, Server, Synthesizer, Plugin Host, Looper, and more</li>
+        <li>Add, edit or delete custom entries in your personal catalog</li>
+        <li>Integrated Help & Documentation panel</li>
+      </ul>
+    </section>
+
+    <section id="how-it-works">
+      <h2>How It Works</h2>
+      <ol>
+        <li><strong>Load Catalog</strong>: PyStudioBand merges a built-in list of essential apps with any
+            user-added entries stored in <code>~/.pystudiomusic/apps.custom</code>.</li>
+        <li><strong>Check Status</strong>: The application queries <code>dpkg-query</code> to determine which
+            packages are installed.</li>
+        <li><strong>Install or Remove</strong>: Select desired apps and click “Apply Changes” to
+            install, remove or purge via apt-get under the hood.</li>
+        <li><strong>Launch Tools</strong>: Switch to the Launch tab, tick the apps you want, and
+            launch them in parallel.</li>
+        <li><strong>Customize Catalog</strong>: Add new software definitions with a friendly form
+            (ID, name, category, description, pkg, command).</li>
+      </ol>
+    </section>
+
+    <section id="installation">
+      <h2>Installation</h2>
+      <pre><code>git clone https://github.com/yourusername/PyStudioBand.git
+cd PyStudioBand
+sudo apt update
+sudo apt install -y python3-gi python3-gi-cairo gir1.2-gtk-3.0
+chmod +x PyStudioBand.py
+./PyStudioBand.py
+      </code></pre>
+      <p>
+        Optionally, install a desktop entry:
+      </p>
+      <pre><code>sudo cp data/PyStudioBand.desktop /usr/share/applications/
+update-desktop-database
+      </code></pre>
+    </section>
+
+    <section id="usage">
+      <h2>Usage</h2>
+      <p>
+        Launch PyStudioBand from your terminal or applications menu. Navigate through the sidebar
+        to manage applications, view status, launch tools, add custom entries, or read detailed help.
+      </p>
+    </section>
+
+    <section id="screenshots">
+      <h2>Screenshots</h2>
+      <div class="gallery">
+        <figure>
+          <img src="docs/screenshots/manage.png" alt="Manage Apps tab">
+          <figcaption>Manage Apps</figcaption>
+        </figure>
+        <figure>
+          <img src="docs/screenshots/status.png" alt="Status tab">
+          <figcaption>Application Status</figcaption>
+        </figure>
+        <figure>
+          <img src="docs/screenshots/launch.png" alt="Launch Apps tab">
+          <figcaption>Launch Multiple Apps</figcaption>
+        </figure>
+        <figure>
+          <img src="docs/screenshots/add.png" alt="Add Custom App tab">
+          <figcaption>Add Custom Application</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="customization">
+      <h2>Customization</h2>
+      <p>
+        Your custom definitions live in <code>~/.pystudiomusic/apps.custom</code>.
+        You can edit this plain-text file directly or use the “Add App” form.
+        The format is:
+      </p>
+      <pre><code>uid|Name|Category|Description|apt-package|launch-command</code></pre>
+    </section>
+
+    <section id="contributing">
+      <h2>Contributing</h2>
+      <p>
+        Contributions are welcome! Please fork the repository, create a feature branch,
+        commit your changes, and open a pull request on GitHub. Follow our coding style
+        and include tests and documentation where appropriate.
+      </p>
+      <p>
+        Repository: <a href="https://github.com/yourusername/PyStudioBand" target="_blank">github.com/yourusername/PyStudioBand</a>
+      </p>
+    </section>
+
+    <section id="license">
+      <h2>License</h2>
+      <p>
+        PyStudioBand is released under the <a href="LICENSE" target="_blank">GPLv3 License</a>.
+        See <code>LICENSE</code> for full terms and contributor guidelines.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Luca Bocaletto – Licensed under GPLv3</p>
+  </footer>
+
+</body>
+</html>

@@ -41,20 +41,6 @@ Professional GTK3 GUI manager for audio & music-production software on Debian an
 
 ---
 
-## Screenshots
-
-<!-- Replace the URLs below with actual screenshots after capturing them -->
-
-| Main Window | Add Custom App |
-| ----------- | -------------- |
-| ![Manage Apps tab](docs/screenshots/manage.png) | ![Add App tab](docs/screenshots/add.png) |
-
-| Status & Launch | Help Panel |
-| --------------- | ---------- |
-| ![Status tab](docs/screenshots/status.png) | ![Help tab](docs/screenshots/help.png) |
-
----
-
 ## Requirements
 
 - Debian 11+ or Ubuntu 20.04+  
